@@ -27,28 +27,46 @@ ties = 0
 print('ROCK, PAPER, SCISSORS')
 player_move = input('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')
 bot_move = random.randint(1, 3)
-score = 'Wins ' + wins + 'Losses ' + losses + 'Ties ' ties # <<<< Take a look here to continue!!!!
+# score = ('Wins ' + wins + 'Losses ' + losses + 'Ties ' ties) # <<<< Take a look here to continue!!!
+score = wins, losses, ties
 
 
 if player_move == 'r' and bot_move == 1:
     print("It's a tie!")
-    losses = losses + 1
+    ties = ties + 1
+    print(score)
 elif player_move == 'p' and bot_move == 1:
     print("You won this round! Gj.")
+    wins = wins +1
+    print(score)
 elif player_move == 's' and bot_move == 1:
     print("Sorry, you lost this one.")
+    losses = losses + 1
+    print(score)
 elif player_move == 'r' and bot_move == 2:
     print("Sorry, you lost this one.")
+    losses = losses +1
+    print(losses)
 elif player_move == 'p' and bot_move == 2:
     print("It's a tie!")
+    ties = ties + 1
+    print(score)
 elif player_move == 's' and bot_move == 2:
     print("You won this round! Gj.")
+    wins = wins +1
+    print(score)
 elif player_move == 'r' and bot_move == 3:
     print("You won this round! GJ.")
+    wins = wins + 1
+    print(score)
 elif player_move == 'p' and bot_move == 3:
     print("Sorry, you lost this one.")
+    losses = losses + 1
+    print(score)
 elif player_move == 's' and bot_move == 3:
     print("It's a tie!")
+    ties = ties + 1
+    print(score)
 
 elif player_move == 'q':
     sys.exit()
