@@ -59,3 +59,7 @@ for i in [0, 1, 2, 3]:
 supplies = ['pens', 'staplers', 'flamethrowers', 'binders']
 for i in range(len(supplies)):
     print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
+
+# Using range(len(supplies)) in this for loop is handy because:
+    # 1. The code in the loop can access the index (as the variable i)
+    # 2. The value at that index (as supplies[i])
