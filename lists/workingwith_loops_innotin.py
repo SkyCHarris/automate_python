@@ -63,3 +63,94 @@ for i in range(len(supplies)):
 # Using range(len(supplies)) in this for loop is handy because:
     # 1. The code in the loop can access the index (as the variable i)
     # 2. The value at that index (as supplies[i])
+
+
+# The in and not in Operators
+
+# You can determine whether a value is or isn't in a list with the in and not in operators.
+# in and not in are used in expressions, and connect two values:
+    # 1. A value to look for in a list
+    # 2. The list where it may be found
+# These expressions will evalute to a Boolean value
+
+'howdy' in ['hello', 'hi', 'howdy', 'heyas']
+spam = ['hello', 'hi', 'howdy', 'heyas']
+'cat' in spam
+'howdy' not in spam
+'cat' not in spam
+
+# The following example lets the user type in a pet name,
+# then check to see whether the name is in a list of pets
+
+myPets = ['Zophie', 'Pooka', 'Fat-tail']
+petName = input("Enter a pet name:")
+petName in [myPets]
+
+if petName in myPets:
+    print(petName + ' is in your list of pets!')
+elif petName not in myPets:
+    print(petName + ' is not in your list of pets')
+
+
+# The Multiple Assignement Trick
+
+# The multiple assignment trick (tuple unpacking):
+    # A shortcute letting you assign multiple variables with the values in a list in one line of code
+
+# Instead of:
+
+cat = ['fat', 'gray', 'loud']
+size = cat[0]
+color = cat[1]
+disposition = cat[2]
+
+# Use:
+
+cat = ['fat', 'gray', 'loud']
+size, color, disposition = cat
+
+# The number of variables and length of list must be exactly equal to avoid ValueError:
+
+
+# Using the enumerate() Function with Lists
+
+# Instead of using the range(len(someList)) technique with a for loop to obtain the integer index of the items in the list...
+    # Call the enumerate() function
+# On each iteration of the loop enumerate() will return two values: 
+    # 1. The index of the item in the list
+    # 2. The item in the list itself
+
+# range(len(someList)) format:
+
+supplies = ['pens', 'staplers', 'flamethrowers', 'binders']
+for i in range(len(supplies)):
+    print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
+
+supplies = ['pens', 'staplers', 'flamethrowers', 'binders']
+for index, item in enumerate(supplies):
+    print('Index ' + str(index) + ' in supplies is: ' + item)
+
+# enumerate() is useful if you need both the item and the item's index in the loop's block
+
+
+# Using the random.choice() and random.shuffle() Functions with Lists
+
+# The 'random' module has a couple functions that aceept lists for arguments
+# random.choice() function returns a randomly selected item from the list
+
+import random
+
+pets = ['Dog', 'Cat', 'Moose']
+random.choice(pets)
+random.choice(pets)
+random.choice(pets)
+
+# random.choice(someList) is a like a shorter form of someList[random.randint(0, len(someList - 1]
+
+# random.shuffle function reorders the items in a list.
+# It modifies the list in place rather than returning a new list
+
+import random
+people = ['Alice', 'Bob', 'Carol', 'David']
+random.shuffle(people)
+people
