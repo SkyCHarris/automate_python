@@ -1,4 +1,4 @@
-# For the following three questions, let's say spam contains the list ['1', 'b', 'c', 'c']
+# For the following three questions, let's say spam contains the list ['a', 'b', 'c', 'd']
 
 # 3. What does spam[int(int('3' * 2) // 11)] evalute to?
 
