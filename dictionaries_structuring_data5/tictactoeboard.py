@@ -104,3 +104,13 @@ for i in range(9):
     else:
         turn = 'X'
 printBoard(theBoard)
+
+# The new code:
+    # 1. Prints out the board at the start of each new turn
+    # 2. Gets the active player's move
+    # 3. Updates the game board accordingly
+    # 4. Swaps the active player
+    # 5. Moves on to the next turn
+
+# This isn't a complete tic-tac-toe game. It doesn't ever check whether a player has won
+    # But it's enough to see how data structures can be used in programs
