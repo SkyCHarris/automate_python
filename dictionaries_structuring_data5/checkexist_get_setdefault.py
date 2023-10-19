@@ -70,4 +70,4 @@ print(count)
 
 # The program loops over each character in the message variable's string, counting how often each character appears
 # The setdefault() method call ensures that the key is in the count dictionary ( with a default value of 0) so the program doesn't throw a KeyError error when count[character] = count[character] + 1 is executed
-# This program works no matter what string is inside the message variable, even if the string is millions of characters long!
+# This program works no matter what string is inside the message variable, even if the string is millions of characters long!git ad
