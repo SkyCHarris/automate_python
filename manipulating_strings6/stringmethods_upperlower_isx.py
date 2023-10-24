@@ -101,4 +101,4 @@ while True:
     # If it wasn't, we're not satisfied, so we tell the user the password needs to be alphanumerica and again ask them to enter a password
 
 # Calling isdecimal() and isalnum() on variables, we're able to test whether the values stored in those variables are decimal or not, alphanumeric or not
-# These tests help us reject the unwanted inputs and accepted the desirable ones
+# These tests help us reject the unwanted inputs and accept the desirable ones
