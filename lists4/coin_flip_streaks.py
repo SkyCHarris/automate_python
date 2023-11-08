@@ -28,7 +28,7 @@ for experimentNumber in range(10000):
 
 
     # Code that checks if there is a streak of 6 heads or tails in a row
-
+    
 import random
 numberOfStreaks = 0
 h_streak = 0
@@ -67,5 +67,7 @@ for i in range(100):
         if current_t_streak >=6:
             total_t_streak = total_t_streak + 1
     print(total_h_streak, total_t_streak)
+
+#TODO Unfinished
 
         
