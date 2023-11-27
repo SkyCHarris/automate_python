@@ -106,3 +106,78 @@ mo2 = phoneRegex.search('My number is 555-4242')
 mo2.group()
 
 # You can think of the ? as saying: "Match zero or one of the group preceding this question mark"
+
+
+#? Matching Zero or More with the Star
+
+# The * (called star or asterisk) means "match zero or more"
+    # - The group that precedes the star can occur any number of times in the text
+    # It can be completely absent or repeated over and over again
+
+import re
+
+batRegex = re.compile(r'Bat(wo)*man')
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group()
+
+mo2 = batRegex.search("The Adventures of Batwoman")
+mo2.group()
+
+mo3 = batRegex.search('The Adventures of Batwowowowoman')
+mo3.group()
+
+# For 'Batman', the (wo)* part of the regex matches zero instances of wo in the string
+# For 'Batwoman', the (wo)* matches one instance of wo
+# For 'Batwowowowoman', (wo)* matches four instances of wo
+
+# If you need to match an actual star character, prefix the star in the regex with a backslash \*
+
+
+#? Matching One or More with the Plus
+
+# While * means "match zero or more", the + (plus) means "match one or more".
+# Unlike the star, which doesn't require its group to appear in the matched string, the group preceding a plus must appear at least once
+
+import re
+
+batRegex = re.compile(r'Bat(wo)+man')
+mo1 = batRegex.search('The Adventures of Batwoman')
+mo1.group()
+
+mo2 = batRegex.search('The Adventures of Batwowowowoman')
+mo2.group()
+
+mo3 = batRegex.search('The Adventures of Batman')
+mo3 == None
+
+# The regex Bat(wo)+man will not match the string 'The Adventures of Batman' because at least one wo is required by the + sign
+
+
+#? Matching Specific Repetitions with Braces
+
+# If you have a group that you want to repeat a specific number of times, follow the group in your regex with a number in braces
+    # ex. The regex (Ha){3} will match the string 'HaHaHa', but will not match 'HaHa'
+# Instead of one number, you can specify a range by writing a minimum, a comma, and a maximum
+    # ex. The regex (Ha){3,5} will match 'HaHaHa', 'HaHaHaHa', and 'HaHaHaHaHa'
+# You can also leave out the first or second number in the braces to leave the min or max unbounded
+    # ex. (Ha){3,} will match three or more instances of the (Ha) group, while (Ha){,5} will match zero to five instances
+# Braces can help make your regexes shorter
+
+# These two regexes match identical patterns:
+
+#* (Ha){3}
+#* (Ha)(Ha)(Ha)
+
+# These two regexes also match identical patterns:
+
+#* (Ha){3,5}
+#* ((Ha)(Ha)(Ha))|((Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha)(Ha))
+
+import re
+
+haRegex = re.compile(r'(Ha){3}')
+mo1 = haRegex.search('HaHaHa')
+mo1.group()
+
+mo2 = haRegex.search('Ha')
+mo2 == None
