@@ -21,3 +21,7 @@ mo1.group()
 nongreedyHaRegex = re.compile(r'(Ha){3,5}?')
 mo2 = nongreedyHaRegex.search('HaHaHaHaHa')
 mo2.group()
+
+# The question mark can have two meanings in regular expressions:
+    # 1. Declaring a non-greedy match
+    # 2. Flagging an optional group
