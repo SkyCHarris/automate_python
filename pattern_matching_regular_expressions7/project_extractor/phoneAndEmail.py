@@ -90,7 +90,7 @@ for groups in phoneRegex.findall(text):
     if groups[6] != '':
         phoneNum += ' x' + groups[6]
     matches.append(phoneNum)
-for gropus in emailRegex.findall(text):
+for groups in emailRegex.findall(text):
     matches.append(groups)
 
 #TODO: Copy results to the clipboard
