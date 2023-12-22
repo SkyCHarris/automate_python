@@ -12,20 +12,20 @@
 
 # Input validation is typically done by repeatedly asking the user to input until they enter valid text
 
-# while True:
-#     print('Enter your age:')
-#     age = input()
-#     try:
-#         age = int(age)
-#     except:
-#         print('Please use numeric digits.')
-#         continue
-#     if age < 1:
-#         print('Please enter a positive number.')
-#         continue
-#     break
+while True:
+    print('Enter your age:')
+    age = input()
+    try:
+        age = int(age)
+    except:
+        print('Please use numeric digits.')
+        continue
+    if age < 1:
+        print('Please enter a positive number.')
+        continue
+    break
 
-# print(f'Your age is {age}.')
+print(f'Your age is {age}.')
 
 # When you run this code you'll be prompted for your age until you enter a valid one
 # This ensures that by the time the execution leaves the while loop, the age variaable will contain a valid value that won't crash the program later
@@ -70,7 +70,22 @@ import pyinputplus as pyip
 
 import pyinputplus as pyip
 
-response = pyipnputplus.inputNum()
+response = pyip.inputNum()
+42
 
+# The as pyip code in the import statement saves us from typing pyinputplus each time we want to call a PyInputPlus function
 
+# Just as you can pass a string to input() to provide a prompt, you can pass a string to a PyInputPlus functions' prompt keyword argument to display a prompt
 
+response = input('Enter a number: ')
+response
+# vs
+import pyinputplus as pyip
+response = pyip.inputInt(prompt='Enter a number: ')
+
+# Use Python's help() function to find out more about each of these functions
+# Ex. help(pyip.inputChoice) displays help information for the inputChoice() function
+
+help(pyip.inputChoice)
+
+# Unlike Python's built-in input(), PyInputPlus functions have several additional features for input validation
