@@ -1,0 +1,5 @@
+1) This is a file
+2) Let's see what it does!
+3) Hope we can read, write, and append properly!
+4) Are you ready?
+5) Let's go!
