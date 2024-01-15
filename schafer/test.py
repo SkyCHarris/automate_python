@@ -1,8 +1,6 @@
-with open('zaradesk.jpg', 'rb') as rf:
-    with open('zaradesk_copy.jpg', 'wb') as wf:
-        chunk_size = 4096
-        rf_chunk = rf.read(chunk_size)
+from datetime import datetime
 
-        while len(rf_chunk) > 0:
-            wf.write(rf_chunk)
-            rf_chunk = rf.read(chunk_size)
+birthday = datetime(1990, 1, 1)
+
+sentence = f'Jenn has a birthday on {birthday:%B %d, %Y}'
+print(sentence)
