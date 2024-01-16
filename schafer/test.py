@@ -1,14 +1,20 @@
-x = 'global x'
+class Employee():
+    def __init__(self, name, age, salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
 
-def outer():
-    x = 'outer x'
+    def __repr__(self): # tells python how we want function represented when printed to screen
+        return '({},{},${}'.format(self.name, self.age, self.salary)
+    
+e1 = Employee('Carl', 37, 70000)
+e2 = Employee('Sarah', 29, 80000)
+e3 = Employee('John', 43, 90000)
 
-    def inner():
-        x = 'inner x'
-        print(x)
+employees = [e1,e2,e3]
 
-    inner()
-    print(x)
+def e_sort(emp):
+    return emp.name
 
-outer()
-print(x)
+s_employees = sorted(employees, key=e_sort)
+print(s_employees)

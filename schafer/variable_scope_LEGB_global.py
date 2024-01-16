@@ -145,3 +145,4 @@ def outer():
 
 outer()
 print(x)
+# local -> enclosing -> global
