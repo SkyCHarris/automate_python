@@ -1,10 +1,14 @@
-import os
-os.chdir(r'C:\Users\slakk\OneDrive\Desktop\UETH - EDCON\Alex')
+import csv
 
-for f in os.listdir():
-    file_name, file_ext = os.path.splitext(f)
-    file_underscore, file_number = file_name.split('DSF')
-    
-    new_name = f'{file_number}-{file_ext}'
+with open('names.csv', 'r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
 
-    os.rename(f, new_name)
+    with open('new_names.csv', 'w') as new_file:
+        fieldnames = ['first_name', 'last_name', 'email']   
+        csv_writer = csv.DictWriter(new_file, fieldnames=fieldnames, delimiter='\t')
+
+        csv_writer.writeheader()
+
+        for line in csv_reader:
+            del line['email']
+            csv_writer.writerow(line)
