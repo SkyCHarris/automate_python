@@ -128,7 +128,7 @@ users.update({2: 'Bob', 3: 'Jame\'s sister'})
 
 print(users)
 
-# union operator
+# union operator |
 
 users: dict = {0: 'Mario', 1: 'Luigi', 2: 'James'}
 users2: dict = {10: 'Spam', 11: 'Eggs'}
