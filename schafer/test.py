@@ -1,7 +1,14 @@
-import datetime
-import pytz
+x = 'global x'
 
-dt_str = 'January 15, 2024'
+def outer():
+    x = 'outer x'
 
-dt = datetime.datetime.strptime(dt_str, '%B %d, %Y')   # 2nd argument tells python what format it's in
-print(dt)
+    def inner():
+        x = 'inner x'
+        print(x)
+
+    inner()
+    print(x)
+
+outer()
+print(x)
