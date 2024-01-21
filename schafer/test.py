@@ -1,20 +1,9 @@
-class Employee():
-    def __init__(self, name, age, salary):
-        self.name = name
-        self.age = age
-        self.salary = salary
+names = ['Peter Parker', 'Clark Kent', 'Wade Wilson', 'Bruce Wayne']
+heroes = ['Spiderman', 'Superman', 'Deadpool', 'Batman']
 
-    def __repr__(self): # tells python how we want function represented when printed to screen
-        return '({},{},${}'.format(self.name, self.age, self.salary)
-    
-e1 = Employee('Carl', 37, 70000)
-e2 = Employee('Sarah', 29, 80000)
-e3 = Employee('John', 43, 90000)
+identities = list(zip(names, heroes))   # convert to list from the start
 
-employees = [e1,e2,e3]
+print(identities)
 
-def e_sort(emp):
-    return emp.name
-
-s_employees = sorted(employees, key=e_sort)
-print(s_employees)
+for identity in identities:
+    print('{} is actually {}!'. format(identity[0], identity[1]))
